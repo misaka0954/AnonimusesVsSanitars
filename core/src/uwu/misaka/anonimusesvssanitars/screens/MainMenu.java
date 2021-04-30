@@ -1,10 +1,10 @@
-package uwu.misaka.anonimusesvssanitars;
+package uwu.misaka.anonimusesvssanitars.screens;
 
-import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.utils.ScreenUtils;
+import uwu.misaka.anonimusesvssanitars.AnonimusesVsSanitars;
 
 public class MainMenu implements Screen {
 
@@ -31,9 +31,9 @@ public class MainMenu implements Screen {
         game.font.draw(game.batch,"Ohayo onee-chan",100,200);
         game.font.draw(game.batch,"Tap in durka to start",100,100);
         game.batch.end();
-        if(Gdx.input.isTouched()){
-            System.out.println("Clicked");
-            //game.setScreen(new GameScreen(game));
+        if(Gdx.input.isTouched()) {
+            // TODO: 30.04.2021 check config 
+            game.setScreen(new SelectorMenu(game));
             dispose();
         }
     }
