@@ -13,11 +13,11 @@ public class Consts{
 
         assets = new AssetManager();
 
-        assets.load("bundles/bundle.properties", I18NBundle.class);
+        assets.load("bundles/bundle_RU.properties", I18NBundle.class);
 
         assets.finishLoading();
 
-        bundle = assets.get("bundles/bundle.properties", I18NBundle.class);
+        bundle = assets.get("bundles/bundle_RU.properties", I18NBundle.class);
 
         Gdx.app.getApplicationLogger().log("constns", bundle.get("message"));
     }
