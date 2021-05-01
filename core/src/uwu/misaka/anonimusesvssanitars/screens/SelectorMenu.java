@@ -41,8 +41,8 @@ public class SelectorMenu implements Screen {
                 Vars.touchPos = new Vector3(Gdx.input.getX(), Gdx.input.getY(), 0);
                 if (Vars.touchPos.x < 350) {
                     // TODO: 30.04.2021 select sanitars
-                    game.setScreen(new GameMenu(game));
                     System.out.println("Selected sanitars");
+                    game.setScreen(new GameMenu(game));
                     dispose();
                 } else {
                     // TODO: 30.04.2021 Select anons
