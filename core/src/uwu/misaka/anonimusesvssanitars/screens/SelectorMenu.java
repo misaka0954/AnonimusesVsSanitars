@@ -8,6 +8,8 @@ import com.badlogic.gdx.utils.ScreenUtils;
 import uwu.misaka.anonimusesvssanitars.AnonimusesVsSanitars;
 import uwu.misaka.anonimusesvssanitars.Vars;
 
+import java.util.Date;
+
 public class SelectorMenu implements Screen {
     final AnonimusesVsSanitars game;
     OrthographicCamera camera;
@@ -34,15 +36,21 @@ public class SelectorMenu implements Screen {
         game.font.draw(game.batch, "Anonimuses", 680, 200);
         game.batch.end();
         if (Gdx.input.isTouched()) {
-            Vars.touchPos = new Vector3(Gdx.input.getX(), Gdx.input.getY(), 0);
-            if (Vars.touchPos.x < 350) {
-                // TODO: 30.04.2021 select sanitars
-                System.out.println("Selected sanitars");
-            } else {
-                // TODO: 30.04.2021 Select anons
-                System.out.println("Selected anonimuses");
+            if (new Date().getTime() - Vars.lastTouchTime > 1000) {
+                Vars.lastTouchTime = new Date().getTime();
+                Vars.touchPos = new Vector3(Gdx.input.getX(), Gdx.input.getY(), 0);
+                if (Vars.touchPos.x < 350) {
+                    // TODO: 30.04.2021 select sanitars
+                    game.setScreen(new GameMenu(game));
+                    System.out.println("Selected sanitars");
+                    dispose();
+                } else {
+                    // TODO: 30.04.2021 Select anons
+                    System.out.println("Selected anonimuses");
+                    game.setScreen(new GameMenu(game));
+                    dispose();
+                }
             }
-            dispose();
         }
     }
 

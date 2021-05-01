@@ -5,6 +5,9 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.utils.ScreenUtils;
 import uwu.misaka.anonimusesvssanitars.AnonimusesVsSanitars;
+import uwu.misaka.anonimusesvssanitars.Vars;
+
+import java.util.Date;
 
 public class MainMenu implements Screen {
 
@@ -32,9 +35,12 @@ public class MainMenu implements Screen {
         game.font.draw(game.batch,"Tap in durka to start",100,100);
         game.batch.end();
         if(Gdx.input.isTouched()) {
-            // TODO: 30.04.2021 check config 
-            game.setScreen(new SelectorMenu(game));
-            dispose();
+            if (new Date().getTime() - Vars.lastTouchTime > 1000) {
+                Vars.lastTouchTime = new Date().getTime();
+                // TODO: 30.04.2021 check config
+                game.setScreen(new SelectorMenu(game));
+                dispose();
+            }
         }
     }
 
