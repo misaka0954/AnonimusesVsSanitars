@@ -18,8 +18,8 @@ public class GameMenu implements Screen {
         camera = new OrthographicCamera();
         camera.setToOrtho(false, 800, 400);
 
-        staminaBar = new StaminaBar(25, Vars.staminaMax * 25);
-        staminaBar.setPosition(10, 750);
+        staminaBar = new StaminaBar(Vars.staminaMax * 25, 25);
+        staminaBar.setPosition(10, 380);
     }
 
     @Override
