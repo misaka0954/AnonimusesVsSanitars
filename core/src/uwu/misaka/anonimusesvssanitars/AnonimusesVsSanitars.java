@@ -8,9 +8,11 @@ import com.badlogic.gdx.utils.ScreenUtils;
 public class AnonimusesVsSanitars extends ApplicationAdapter {
 	SpriteBatch batch;
 	Texture img;
-	
+
 	@Override
 	public void create () {
+		Consts.init();
+
 		batch = new SpriteBatch();
 		img = new Texture("badlogic.jpg");
 	}
@@ -22,7 +24,7 @@ public class AnonimusesVsSanitars extends ApplicationAdapter {
 		batch.draw(img, 0, 0);
 		batch.end();
 	}
-	
+
 	@Override
 	public void dispose () {
 		batch.dispose();
