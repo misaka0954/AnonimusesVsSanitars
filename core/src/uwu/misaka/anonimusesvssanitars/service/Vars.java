@@ -1,4 +1,4 @@
-package uwu.misaka.anonimusesvssanitars;
+package uwu.misaka.anonimusesvssanitars.service;
 
 import com.badlogic.gdx.math.Vector3;
 

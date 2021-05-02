@@ -4,7 +4,8 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.utils.ScreenUtils;
 import uwu.misaka.anonimusesvssanitars.AnonimusesVsSanitars;
-import uwu.misaka.anonimusesvssanitars.Vars;
+import uwu.misaka.anonimusesvssanitars.service.Bundles;
+import uwu.misaka.anonimusesvssanitars.service.Vars;
 import uwu.misaka.anonimusesvssanitars.ui.StaminaBar;
 
 public class GameMenu implements Screen {
@@ -34,6 +35,7 @@ public class GameMenu implements Screen {
         game.batch.setProjectionMatrix(camera.combined);
         game.batch.begin();
         staminaBar.draw(game.batch, 75f);
+        game.font.draw(game.batch, Bundles.bundle_default.get("game_menu_stamina") + ": " + Vars.staminaMax, 10, 365);
         game.batch.end();
     }
 

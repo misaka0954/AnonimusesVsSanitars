@@ -6,7 +6,8 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.ScreenUtils;
 import uwu.misaka.anonimusesvssanitars.AnonimusesVsSanitars;
-import uwu.misaka.anonimusesvssanitars.Vars;
+import uwu.misaka.anonimusesvssanitars.service.Bundles;
+import uwu.misaka.anonimusesvssanitars.service.Vars;
 
 import java.util.Date;
 
@@ -31,9 +32,9 @@ public class SelectorMenu implements Screen {
         camera.update();
         game.batch.setProjectionMatrix(camera.combined);
         game.batch.begin();
-        game.font.draw(game.batch, "Choose your side of WAR", 325, 200);
-        game.font.draw(game.batch, "Sanitars", 50, 200);
-        game.font.draw(game.batch, "Anonimuses", 680, 200);
+        game.font.draw(game.batch, Bundles.bundle_default.get("selector_center"), 325, 200);
+        game.font.draw(game.batch, Bundles.bundle_default.get("selector_sanitars"), 50, 200);
+        game.font.draw(game.batch, Bundles.bundle_default.get("selector_anonimuses"), 680, 200);
         game.batch.end();
         if (Gdx.input.isTouched()) {
             if (new Date().getTime() - Vars.lastTouchTime > 1000) {

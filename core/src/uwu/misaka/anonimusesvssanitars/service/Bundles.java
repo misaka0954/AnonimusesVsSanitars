@@ -1,18 +1,16 @@
-package uwu.misaka.anonimusesvssanitars;
+package uwu.misaka.anonimusesvssanitars.service;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.utils.I18NBundle;
 
-public class Consts{
+import java.util.Locale;
 
-    public static I18NBundle bundle;
+public class Bundles {
     public static I18NBundle bundle_default;
-    public static AssetManager assets;
 
     public static void init() {
         FileHandle hf = Gdx.files.internal("bundles/bundle");
-        bundle_default = I18NBundle.createBundle(hf);
+        bundle_default = I18NBundle.createBundle(hf, new Locale("ru", "RU"), "utf-8");
     }
 }
