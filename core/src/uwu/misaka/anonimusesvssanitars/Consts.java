@@ -2,23 +2,17 @@ package uwu.misaka.anonimusesvssanitars;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.utils.I18NBundle;
 
 public class Consts{
 
     public static I18NBundle bundle;
+    public static I18NBundle bundle_default;
     public static AssetManager assets;
 
-    public static void init(){
-
-        assets = new AssetManager();
-
-        assets.load("bundles/bundle_RU.properties", I18NBundle.class);
-
-        assets.finishLoading();
-
-        bundle = assets.get("bundles/bundle_RU.properties", I18NBundle.class);
-
-        Gdx.app.getApplicationLogger().log("constns", bundle.get("message"));
+    public static void init() {
+        FileHandle hf = Gdx.files.internal("bundles/bundle");
+        bundle_default = I18NBundle.createBundle(hf);
     }
 }

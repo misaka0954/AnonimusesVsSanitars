@@ -1,7 +1,6 @@
 package uwu.misaka.anonimusesvssanitars;
 
 import com.badlogic.gdx.Game;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import uwu.misaka.anonimusesvssanitars.screens.MainMenu;
@@ -9,8 +8,6 @@ import uwu.misaka.anonimusesvssanitars.screens.MainMenu;
 public class AnonimusesVsSanitars extends Game {
 	public SpriteBatch batch;
 	public BitmapFont font;
-
-	Texture img;
 
 	@Override
 	public void create() {
@@ -29,6 +26,5 @@ public class AnonimusesVsSanitars extends Game {
 	@Override
 	public void dispose () {
 		batch.dispose();
-		img.dispose();
 	}
 }
