@@ -5,6 +5,7 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.utils.ScreenUtils;
 import uwu.misaka.anonimusesvssanitars.AnonimusesVsSanitars;
+import uwu.misaka.anonimusesvssanitars.GameData;
 import uwu.misaka.anonimusesvssanitars.service.Bundles;
 import uwu.misaka.anonimusesvssanitars.service.Vars;
 
@@ -39,7 +40,11 @@ public class MainMenu implements Screen {
             if (new Date().getTime() - Vars.lastTouchTime > 1000) {
                 Vars.lastTouchTime = new Date().getTime();
                 // TODO: 30.04.2021 check config
-                game.setScreen(new SelectorMenu(game));
+                if (GameData.fraction != "") {
+                    game.setScreen(new GameMenu(game));
+                } else {
+                    game.setScreen(new SelectorMenu(game));
+                }
                 dispose();
             }
         }

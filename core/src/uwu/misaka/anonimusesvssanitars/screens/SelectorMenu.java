@@ -8,6 +8,7 @@ import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.utils.ScreenUtils;
 import uwu.misaka.anonimusesvssanitars.AnonimusesVsSanitars;
+import uwu.misaka.anonimusesvssanitars.GameData;
 import uwu.misaka.anonimusesvssanitars.service.Bundles;
 import uwu.misaka.anonimusesvssanitars.service.DrawableUtils;
 import uwu.misaka.anonimusesvssanitars.service.Sprites;
@@ -51,13 +52,13 @@ public class SelectorMenu implements Screen {
                 Vars.lastTouchTime = new Date().getTime();
                 Vars.touchPos = new Vector3(Gdx.input.getX(), Gdx.input.getY(), 0);
                 if (Vars.touchPos.x < 350) {
-                    // TODO: 30.04.2021 select sanitars
-                    System.out.println("Selected sanitars");
+                    // TODO: 03.05.2021 sanitars sound
+                    GameData.fraction = "sanitar";
                     game.setScreen(new GameMenu(game));
                     dispose();
                 } else {
-                    // TODO: 30.04.2021 Select anons
-                    System.out.println("Selected anonimuses");
+                    // TODO: 03.05.2021 anons sound
+                    GameData.fraction = "anonimus";
                     game.setScreen(new GameMenu(game));
                     dispose();
                 }
