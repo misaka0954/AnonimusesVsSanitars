@@ -32,8 +32,8 @@ public class MainMenu implements Screen {
         camera.update();
         game.batch.setProjectionMatrix(camera.combined);
         game.batch.begin();
-        game.font.draw(game.batch, Bundles.bundle_default.get("main_menu_header"), 100, 200);
-        game.font.draw(game.batch, Bundles.bundle_default.get("main_menu_clickToPlay"), 100, 100);
+        game.font_green.draw(game.batch, Bundles.bundle_default.get("main_menu_header"), 100, 200);
+        game.font_green.draw(game.batch, Bundles.bundle_default.get("main_menu_clickToPlay"), 100, 100);
         game.batch.end();
         if (Gdx.input.isTouched()) {
             if (new Date().getTime() - Vars.lastTouchTime > 1000) {

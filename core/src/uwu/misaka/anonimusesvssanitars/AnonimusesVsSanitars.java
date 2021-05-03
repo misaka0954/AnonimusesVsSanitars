@@ -10,15 +10,29 @@ import uwu.misaka.anonimusesvssanitars.service.Bundles;
 
 public class AnonimusesVsSanitars extends Game {
 	public SpriteBatch batch;
-	public BitmapFont font;
+	public BitmapFont font_green;
+	public BitmapFont font_red;
+	public BitmapFont font_orange;
+	public BitmapFont font_white;
+	public BitmapFont font_black;
 
 	@Override
 	public void create() {
 		Bundles.init();
 
 		batch = new SpriteBatch();
-		font = new BitmapFont(Gdx.files.internal("fonts/font.fnt"));
-		font.setColor(Color.GREEN);
+		font_green = new BitmapFont(Gdx.files.internal("fonts/font.fnt"));
+		font_red = new BitmapFont(Gdx.files.internal("fonts/font.fnt"));
+		font_orange = new BitmapFont(Gdx.files.internal("fonts/font.fnt"));
+		font_black = new BitmapFont(Gdx.files.internal("fonts/font.fnt"));
+		font_white = new BitmapFont(Gdx.files.internal("fonts/font.fnt"));
+
+		font_green.setColor(Color.GREEN);
+		font_red.setColor(Color.RED);
+		font_orange.setColor(Color.ORANGE);
+		font_black.setColor(Color.BLACK);
+		font_white.setColor(Color.WHITE);
+
 		this.setScreen(new MainMenu(this));
 	}
 
@@ -30,6 +44,6 @@ public class AnonimusesVsSanitars extends Game {
 	@Override
 	public void dispose () {
 		batch.dispose();
-		font.dispose();
+		font_green.dispose();
 	}
 }

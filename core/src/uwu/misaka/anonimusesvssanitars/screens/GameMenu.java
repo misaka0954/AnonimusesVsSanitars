@@ -35,7 +35,7 @@ public class GameMenu implements Screen {
         game.batch.setProjectionMatrix(camera.combined);
         game.batch.begin();
         staminaBar.draw(game.batch, 75f);
-        game.font.draw(game.batch, Bundles.bundle_default.get("game_menu_stamina") + ": " + Vars.staminaMax, 10, 365);
+        game.font_green.draw(game.batch, Bundles.bundle_default.get("game_menu_stamina") + ": " + Vars.staminaMax, 10, 365);
         game.batch.end();
     }
 
