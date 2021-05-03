@@ -17,7 +17,7 @@ public class AnonimusesVsSanitars extends Game {
 		Bundles.init();
 
 		batch = new SpriteBatch();
-		font = new BitmapFont(Gdx.files.internal("fonts/icon.ttf"));
+		font = new BitmapFont(Gdx.files.internal("fonts/font.fnt"));
 		font.setColor(Color.GREEN);
 		this.setScreen(new MainMenu(this));
 	}

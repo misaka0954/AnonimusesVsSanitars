@@ -32,9 +32,9 @@ public class SelectorMenu implements Screen {
         camera.update();
         game.batch.setProjectionMatrix(camera.combined);
         game.batch.begin();
-        game.font.draw(game.batch, Bundles.bundle_default.get("selector_center"), 325, 200);
+        game.font.draw(game.batch, Bundles.bundle_default.get("selector_center"), 325, 250);
         game.font.draw(game.batch, Bundles.bundle_default.get("selector_sanitars"), 50, 200);
-        game.font.draw(game.batch, Bundles.bundle_default.get("selector_anonimuses"), 680, 200);
+        game.font.draw(game.batch, Bundles.bundle_default.get("selector_anonimuses"), 650, 200);
         game.batch.end();
         if (Gdx.input.isTouched()) {
             if (new Date().getTime() - Vars.lastTouchTime > 1000) {
