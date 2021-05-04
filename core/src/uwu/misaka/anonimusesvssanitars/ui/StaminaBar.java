@@ -2,8 +2,8 @@ package uwu.misaka.anonimusesvssanitars.ui;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.scenes.scene2d.ui.ProgressBar;
-import uwu.misaka.anonimusesvssanitars.service.DrawableUtils;
 import uwu.misaka.anonimusesvssanitars.service.Vars;
+import uwu.misaka.anonimusesvssanitars.service.utils.DrawableUtils;
 
 public class StaminaBar extends ProgressBar {
     public StaminaBar(int width, int height) {

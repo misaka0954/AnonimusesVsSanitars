@@ -1,4 +1,4 @@
-package uwu.misaka.anonimusesvssanitars.service;
+package uwu.misaka.anonimusesvssanitars.service.utils;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Pixmap;

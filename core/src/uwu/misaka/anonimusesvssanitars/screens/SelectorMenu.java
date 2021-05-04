@@ -10,9 +10,9 @@ import com.badlogic.gdx.utils.ScreenUtils;
 import uwu.misaka.anonimusesvssanitars.AnonimusesVsSanitars;
 import uwu.misaka.anonimusesvssanitars.GameData;
 import uwu.misaka.anonimusesvssanitars.service.Bundles;
-import uwu.misaka.anonimusesvssanitars.service.DrawableUtils;
 import uwu.misaka.anonimusesvssanitars.service.Sprites;
 import uwu.misaka.anonimusesvssanitars.service.Vars;
+import uwu.misaka.anonimusesvssanitars.service.utils.DrawableUtils;
 
 import java.util.Date;
 
