@@ -16,7 +16,7 @@ enum Rare {
 public class Unit {
     public static ArrayList<Unit> units = new ArrayList<>();
     public static Unit base_anonimus = new Unit("base_anonimus", TextureUtils.noTexture(), 100, 10, 25, 40, Rare.nope, "anonimus");
-    public static Unit base_sanitar = new Unit("base_sanitar", TextureUtils.noTexture(), 100, 10, 25, 40, Rare.nope, "sanitar");
+    public static Unit base_sanitar = new Unit("base_sanitar", Sprites.base_sanitar, 100, 10, 25, 40, Rare.nope, "sanitar");
     public String name;
     public Texture texture;
     public int maxHp;
