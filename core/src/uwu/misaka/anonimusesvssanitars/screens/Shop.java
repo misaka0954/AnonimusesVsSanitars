@@ -11,35 +11,41 @@ import java.util.ArrayList;
 
 public class Shop implements Screen {
     final AnonimusesVsSanitars game;
-    final Screen from;
     OrthographicCamera camera;
 
-    public Shop(AnonimusesVsSanitars game, Screen from) {
+    public Shop(AnonimusesVsSanitars game) {
         this.game = game;
-        this.from = from;
         camera = new OrthographicCamera();
         camera.setToOrtho(false, 800, 400);
     }
 
     @Override
     public void show() {
-        ScreenUtils.clear(0, 0, 0, 0);
-        camera.update();
-        game.batch.setProjectionMatrix(camera.combined);
-        game.batch.begin();
-        game.batch.draw(Sprites.shopping_neko, 700, 15, 100, 50);
-        for (ShopCell c : ShopCell.present) {
-            game.batch.draw(Sprites.shop_base, 25 + c.x * 110, 25 + c.y * 110);
-            if (c.sell != null) {
-                game.batch.draw(Sprites.shop_base, 25 + c.x * 110 + 25, 25 + c.y * 110 + 15);
-            }
-        }
-        game.batch.end();
+        ShopCell.present.add(new ShopCell(0, 0, Unit.base_sanitar));
+        ShopCell.present.add(new ShopCell(0, 1, Unit.base_sanitar));
+        ShopCell.present.add(new ShopCell(0, 2, Unit.base_sanitar));
+        ShopCell.present.add(new ShopCell(1, 0, Unit.base_sanitar));
+        ShopCell.present.add(new ShopCell(1, 1, Unit.base_sanitar));
+        ShopCell.present.add(new ShopCell(1, 2, Unit.base_sanitar));
+        ShopCell.present.add(new ShopCell(2, 0, Unit.base_sanitar));
+        ShopCell.present.add(new ShopCell(2, 1, Unit.base_sanitar));
+        ShopCell.present.add(new ShopCell(2, 2, Unit.base_sanitar));
     }
 
     @Override
     public void render(float delta) {
-
+        ScreenUtils.clear(0, 0, 0, 0);
+        camera.update();
+        game.batch.setProjectionMatrix(camera.combined);
+        game.batch.begin();
+        game.batch.draw(Sprites.shopping_neko, 400, 5, 400, 200);
+        for (ShopCell c : ShopCell.present) {
+            game.batch.draw(Sprites.shop_base, 25 + c.x * 110, 25 + c.y * 110);
+            if (c.sell != null) {
+                game.batch.draw(c.sell.texture, 25 + c.x * 110 + 25, 25 + c.y * 110 + 10);
+            }
+        }
+        game.batch.end();
     }
 
     @Override
@@ -72,5 +78,11 @@ public class Shop implements Screen {
         public int x;
         public int y;
         public Unit sell;
+
+        public ShopCell(int x, int y, Unit u) {
+            this.x = x;
+            this.y = y;
+            this.sell = u;
+        }
     }
 }

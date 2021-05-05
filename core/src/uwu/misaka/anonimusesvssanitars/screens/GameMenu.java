@@ -1,5 +1,6 @@
 package uwu.misaka.anonimusesvssanitars.screens;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.utils.ScreenUtils;
@@ -10,6 +11,8 @@ import uwu.misaka.anonimusesvssanitars.service.Formation;
 import uwu.misaka.anonimusesvssanitars.service.Sprites;
 import uwu.misaka.anonimusesvssanitars.service.Vars;
 import uwu.misaka.anonimusesvssanitars.ui.StaminaBar;
+
+import java.util.Date;
 
 public class GameMenu implements Screen {
     final AnonimusesVsSanitars game;
@@ -43,6 +46,13 @@ public class GameMenu implements Screen {
         game.font_green.draw(game.batch, Bundles.bundle_default.get("game_menu_stamina") + ": " + GameData.stamina + "/" + Vars.staminaMax, 10, 365);
         drawFormation(GameData.formation, 35, 35, 120, 100);
         game.batch.end();
+        if (Gdx.input.isTouched()) {
+            if (new Date().getTime() - Vars.lastTouchTime > 1000) {
+                // TODO: 05.05.2021 change to another
+                game.setScreen(new Shop(game));
+                dispose();
+            }
+        }
     }
 
     private void drawFormation(Formation f, int start_x, int start_y, int x_offset, int y_offset) {
