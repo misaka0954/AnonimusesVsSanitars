@@ -21,15 +21,7 @@ public class Shop implements Screen {
 
     @Override
     public void show() {
-        ShopCell.present.add(new ShopCell(0, 0, Unit.base_sanitar));
-        ShopCell.present.add(new ShopCell(0, 1, Unit.base_sanitar));
-        ShopCell.present.add(new ShopCell(0, 2, Unit.base_sanitar));
-        ShopCell.present.add(new ShopCell(1, 0, Unit.base_sanitar));
-        ShopCell.present.add(new ShopCell(1, 1, Unit.base_sanitar));
-        ShopCell.present.add(new ShopCell(1, 2, Unit.base_sanitar));
-        ShopCell.present.add(new ShopCell(2, 0, Unit.base_sanitar));
-        ShopCell.present.add(new ShopCell(2, 1, Unit.base_sanitar));
-        ShopCell.present.add(new ShopCell(2, 2, Unit.base_sanitar));
+
     }
 
     @Override

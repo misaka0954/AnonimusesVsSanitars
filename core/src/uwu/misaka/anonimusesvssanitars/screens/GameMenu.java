@@ -44,12 +44,15 @@ public class GameMenu implements Screen {
         staminaBar.draw(game.batch, 75f);
         game.batch.draw(Sprites.stamina_icon, 200, 340);
         game.font_green.draw(game.batch, Bundles.bundle_default.get("game_menu_stamina") + ": " + GameData.stamina + "/" + Vars.staminaMax, 10, 365);
+        game.batch.draw(Sprites.shopping_neko, 700, 10, 100, 50);
         drawFormation(GameData.formation, 35, 35, 120, 100);
         game.batch.end();
         if (Gdx.input.isTouched()) {
             if (new Date().getTime() - Vars.lastTouchTime > 1000) {
                 // TODO: 05.05.2021 change to another
-                game.setScreen(new Shop(game));
+                if (Gdx.input.getX() > 700 && Gdx.input.getY() < 60 && Gdx.input.getY() > 10) {
+                    game.setScreen(new Shop(game));
+                }
                 dispose();
             }
         }
